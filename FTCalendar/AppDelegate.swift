@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  FTCalendar
-//
-//  Created by 紀宇軒 on 2017/5/26.
-//  Copyright © 2017年 yuhsuan19. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

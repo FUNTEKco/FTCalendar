@@ -14,6 +14,8 @@
 		4B6F21DE1ED7C7C30029978E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6F21DC1ED7C7C30029978E /* LaunchScreen.storyboard */; };
 		4B6F21E91ED7C7C30029978E /* FTCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F21E81ED7C7C30029978E /* FTCalendarTests.swift */; };
 		4B6F21F41ED7C7C30029978E /* FTCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F21F31ED7C7C30029978E /* FTCalendarUITests.swift */; };
+		4B6F22041ED7D0C20029978E /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F22021ED7D0C20029978E /* CalendarDayCell.swift */; };
+		4B6F22051ED7D0C20029978E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F22031ED7D0C20029978E /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		4B6F21EF1ED7C7C30029978E /* FTCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FTCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6F21F31ED7C7C30029978E /* FTCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTCalendarUITests.swift; sourceTree = "<group>"; };
 		4B6F21F51ED7C7C30029978E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B6F22021ED7D0C20029978E /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		4B6F22031ED7D0C20029978E /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				4B6F21D31ED7C7C30029978E /* AppDelegate.swift */,
 				4B6F21D51ED7C7C30029978E /* ViewController.swift */,
+				4B6F22021ED7D0C20029978E /* CalendarDayCell.swift */,
+				4B6F22031ED7D0C20029978E /* CalendarView.swift */,
 				4B6F21D71ED7C7C30029978E /* Main.storyboard */,
 				4B6F21DA1ED7C7C30029978E /* Assets.xcassets */,
 				4B6F21DC1ED7C7C30029978E /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			files = (
 				4B6F21D61ED7C7C30029978E /* ViewController.swift in Sources */,
 				4B6F21D41ED7C7C30029978E /* AppDelegate.swift in Sources */,
+				4B6F22051ED7D0C20029978E /* CalendarView.swift in Sources */,
+				4B6F22041ED7D0C20029978E /* CalendarDayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
