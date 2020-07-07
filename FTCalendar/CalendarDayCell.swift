@@ -23,7 +23,7 @@ class CalendarDayCell: UICollectionViewCell {
         dayLabel.frame.origin = CGPoint.init(x: 0, y: 0)
         dayLabel.frame.size = self.frame.size
         dayLabel.textAlignment = .center
-        dayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+        dayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         dayLabel.textColor = UIColor.black.withAlphaComponent(0.8)
         dayLabel.backgroundColor = UIColor.clear
         

@@ -43,28 +43,28 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         self.startDateLabel.frame = CGRect.init(x: 23, y: dateLabelY , width: 150, height: 26)
         self.startDateLabel.text = "啟程"
         self.startDateLabel.textColor = UIColor.black.withAlphaComponent(0.15)
-        self.startDateLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium)
+        self.startDateLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium)
         self.startDateLabel.textAlignment = .left
         self.addSubview(self.startDateLabel)
         
         self.startWeekdayLabel.frame = CGRect.init(x: 23, y: weekdayLabelY, width: 150, height: 19)
         self.startWeekdayLabel.text = "點選日期"
         self.startWeekdayLabel.textColor = UIColor.black.withAlphaComponent(0.15)
-        self.startWeekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+        self.startWeekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         self.startWeekdayLabel.textAlignment = .left
         self.addSubview(self.startWeekdayLabel)
         
         self.endDateLabel.frame = CGRect.init(x: rightLabelX, y: dateLabelY , width: 150, height: 26)
         self.endDateLabel.text = "回程"
         self.endDateLabel.textColor = UIColor.black.withAlphaComponent(0.15)
-        self.endDateLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightMedium)
+        self.endDateLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium)
         self.endDateLabel.textAlignment = .right
         self.addSubview(self.endDateLabel)
         
         self.endWeekdayLabel.frame = CGRect.init(x: rightLabelX, y: weekdayLabelY, width: 150, height: 19)
         self.endWeekdayLabel.text = "點選日期"
         self.endWeekdayLabel.textColor = UIColor.black.withAlphaComponent(0.15)
-        self.endWeekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+        self.endWeekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         self.endWeekdayLabel.textAlignment = .right
         self.addSubview(self.endWeekdayLabel)
         
@@ -95,7 +95,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             weekdayLabel.text = element
             weekdayLabel.textColor = UIColor.black.withAlphaComponent(0.8)
             weekdayLabel.textAlignment = .center
-            weekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+            weekdayLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
             self.addSubview(weekdayLabel)
         }
         
@@ -109,7 +109,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         // flowLayout
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize.init(width: weekdayLabelWidth, height: weekdayLabelWidth) // cell size
@@ -119,9 +119,9 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         self.calendarCollectionView.collectionViewLayout = layout
         self.calendarCollectionView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "CalendarDayCell")
         // register header
-        self.calendarCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,    withReuseIdentifier: "Header")
+        self.calendarCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,    withReuseIdentifier: "Header")
         // register footer
-        self.calendarCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind :UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer")
+        self.calendarCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind :UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer")
         // data
         self.prepareCalendarSourceData()
         self.calendarCollectionView.delegate = self
@@ -138,7 +138,7 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     // MARK: Function
     // button
-    func doneButtonPressed() {
+    @objc func doneButtonPressed() {
         self.delegate?.finishDatePicking()
     }
     
@@ -156,8 +156,8 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         let monthLabel = UILabel.init(frame: .zero)
         
-        if (kind == UICollectionElementKindSectionHeader) {
-            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
             for view in reusableView.subviews {
                 view.removeFromSuperview()
             }
@@ -165,15 +165,15 @@ class CalendarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
             monthLabel.frame.size = reusableView.frame.size
             monthLabel.textAlignment = .right
             monthLabel.textColor = UIColor.black.withAlphaComponent(0.8)
-            monthLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+            monthLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
             
             let monthDate = months[indexPath.section]
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM, YYYY"
             
             monthLabel.text = dateFormatter.string(from: monthDate)
-        } else if (kind == UICollectionElementKindSectionFooter) {
-            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
+        } else if (kind == UICollectionView.elementKindSectionFooter) {
+            reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
             
             reusableView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         }

@@ -221,6 +221,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -430,7 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.yuhsuan19.FTCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -443,7 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.yuhsuan19.FTCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -524,6 +525,7 @@
 				4B6F21FA1ED7C7C30029978E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B6F21FB1ED7C7C30029978E /* Build configuration list for PBXNativeTarget "FTCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +534,7 @@
 				4B6F21FD1ED7C7C30029978E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B6F21FE1ED7C7C30029978E /* Build configuration list for PBXNativeTarget "FTCalendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +543,7 @@
 				4B6F22001ED7C7C30029978E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

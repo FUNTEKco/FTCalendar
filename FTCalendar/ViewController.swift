@@ -44,7 +44,7 @@ class ViewController: UIViewController, CalendarViewDelegate {
             self.calendarView.frame.origin = self.calendarShowPosition
         })
     }
-    func hideCalendar() {
+    @objc func hideCalendar() {
         self.calendarBackgroundView.isHidden = true
         
         UIView.animate(withDuration: 0.5, animations: {
